@@ -871,9 +871,9 @@ function buildGeneric(defines, dir) {
   rimraf.sync(dir);
 
   return merge([
-    createMainBundle(defines).pipe(gulp.dest(dir + "build")),
-    createWorkerBundle(defines).pipe(gulp.dest(dir + "build")),
-    createSandboxBundle(defines).pipe(gulp.dest(dir + "build")),
+    createMainBundle(defines).pipe(gulp.dest(dir + "web")),
+    createWorkerBundle(defines).pipe(gulp.dest(dir + "web")),
+    createSandboxBundle(defines).pipe(gulp.dest(dir + "web")),
     createWebBundle(defines, {
       defaultPreferencesDir: defines.SKIP_BABEL
         ? "generic/"
@@ -894,7 +894,7 @@ function buildGeneric(defines, dir) {
     createCMapBundle().pipe(gulp.dest(dir + "web/cmaps")),
     createStandardFontBundle().pipe(gulp.dest(dir + "web/standard_fonts")),
 
-    preprocessHTML("web/viewer.html", defines).pipe(gulp.dest(dir + "web")),
+    preprocessHTML("web/index.html", defines).pipe(gulp.dest(dir + "web")),
     preprocessCSS("web/viewer.css", defines)
       .pipe(
         postcss([
@@ -903,10 +903,6 @@ function buildGeneric(defines, dir) {
           autoprefixer(AUTOPREFIXER_CONFIG),
         ])
       )
-      .pipe(gulp.dest(dir + "web")),
-
-    gulp
-      .src("web/compressed.tracemonkey-pldi-09.pdf")
       .pipe(gulp.dest(dir + "web")),
   ]);
 }

@@ -202,7 +202,7 @@ const defaultOptions = {
     value:
       typeof PDFJSDev === "undefined" || !PDFJSDev.test("PRODUCTION")
         ? "../external/bcmaps/"
-        : "../web/cmaps/",
+        : "./cmaps/",
     kind: OptionKind.API,
   },
   disableAutoFetch: {
@@ -260,7 +260,7 @@ const defaultOptions = {
     value:
       typeof PDFJSDev === "undefined" || !PDFJSDev.test("PRODUCTION")
         ? "../external/standard_fonts/"
-        : "../web/standard_fonts/",
+        : "./standard_fonts/",
     kind: OptionKind.API,
   },
   verbosity: {
@@ -279,7 +279,7 @@ const defaultOptions = {
     value:
       typeof PDFJSDev === "undefined" || !PDFJSDev.test("PRODUCTION")
         ? "../src/worker_loader.js"
-        : "../build/pdf.worker.js",
+        : "./pdf.worker.js",
     kind: OptionKind.WORKER,
   },
 };
@@ -312,7 +312,7 @@ if (
     value:
       typeof PDFJSDev === "undefined" || !PDFJSDev.test("PRODUCTION")
         ? "../build/dev-sandbox/pdf.sandbox.js"
-        : "../build/pdf.sandbox.js",
+        : "./pdf.sandbox.js",
     kind: OptionKind.VIEWER,
   };
 } else if (PDFJSDev.test("CHROME")) {
@@ -328,7 +328,7 @@ if (
   };
   defaultOptions.sandboxBundleSrc = {
     /** @type {string} */
-    value: "../build/pdf.sandbox.js",
+    value: "./pdf.sandbox.js",
     kind: OptionKind.VIEWER,
   };
 }

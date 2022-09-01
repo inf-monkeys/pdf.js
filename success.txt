@@ -1,0 +1,10 @@
+https://pdf-viewer.aside.fun/locale/locale.properties
+https://pdf-viewer.aside.fun/pdf.js
+https://pdf-viewer.aside.fun/pdf.js.map
+https://pdf-viewer.aside.fun/pdf.sandbox.js
+https://pdf-viewer.aside.fun/pdf.sandbox.js.map
+https://pdf-viewer.aside.fun/pdf.worker.js
+https://pdf-viewer.aside.fun/pdf.worker.js.map
+https://pdf-viewer.aside.fun/viewer.css
+https://pdf-viewer.aside.fun/viewer.js
+https://pdf-viewer.aside.fun/index.html
