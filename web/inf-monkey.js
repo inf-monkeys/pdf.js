@@ -13,8 +13,15 @@ function debounce(fn, wait = 1000) {
  * @param {{ type: string, data?: any }} msg
  */
 function postMessageToDashboard(msg) {
-  // const { type, data } = msg;
-  console.log(msg);
+  if (!window.parent) {
+    console.log(msg);
+    return;
+  }
+  const { type, data } = msg;
+  window.parent.postMessage({
+    type,
+    data,
+  });
 }
 
 /**
